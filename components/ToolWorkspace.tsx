@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Tool } from "@/lib/tools";
 import { EXT, FORMAT_LABEL, OutType, fmt, readSize, render, renderToTarget, validate } from "@/lib/image";
 
@@ -1315,15 +1314,14 @@ export default function ToolWorkspace({ tool }: { tool: Tool }) {
 
       <div className="mt-6 flex flex-wrap gap-3">
         {out && type && (
-          <Link
-            href={out.url}
-            download={`${base}-pixeltools.${EXT[type]}`}
-            rel="noopener"
-            aria-label={`Download processed image as ${EXT[type].toUpperCase()}`}
-            className="inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-3.5 font-bold text-white shadow-lg shadow-brand/20 transition hover:bg-brand-dark active:scale-95"
-          >
-            Download Image
-          </Link>
+          <a
+  href={out.url}
+  download={`${base}-pixeltools.${EXT[type]}`}
+  aria-label={`Download processed image as ${EXT[type].toUpperCase()}`}
+  className="inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-3.5 font-bold text-white shadow-lg shadow-brand/20 transition hover:bg-brand-dark active:scale-95"
+>
+  Download Image
+</a>
         )}
         {out && (
           <button
@@ -1412,15 +1410,14 @@ export default function ToolWorkspace({ tool }: { tool: Tool }) {
               >
                 Close Preview
               </button>
-              <Link
-                href={out.url}
-                download={`${base}-pixeltools.${EXT[type!]}`}
-                rel="noopener"
-                aria-label={`Download ${EXT[type!].toUpperCase()} image`}
-                className="rounded-xl bg-brand px-6 py-2.5 font-semibold text-white shadow hover:bg-brand-dark"
-              >
-                Download Image
-              </Link>
+              <a
+  href={out.url}
+  download={`${base}-pixeltools.${EXT[type!]}`}
+  aria-label={`Download ${EXT[type!].toUpperCase()} image`}
+  className="rounded-xl bg-brand px-6 py-2.5 font-semibold text-white shadow hover:bg-brand-dark"
+>
+  Download Image
+</a>
             </div>
           </div>
         </div>
