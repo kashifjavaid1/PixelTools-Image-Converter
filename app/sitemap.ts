@@ -3,7 +3,6 @@ import { TOOLS } from "@/lib/tools";
 import { SITE_URL, CONTENT_UPDATED } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // A fixed date (not "now") so <lastmod> only changes when content really changes.
   const lastModified = new Date(CONTENT_UPDATED);
   const pages: { path: string; priority: number; freq: "weekly" | "monthly" | "yearly" }[] = [
     { path: "", priority: 1, freq: "weekly" },

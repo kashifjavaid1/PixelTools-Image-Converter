@@ -5,18 +5,17 @@ export type Category = "Compress" | "Resize" | "Convert";
 export interface Tool {
   slug: string;
   name: string;
-  desc: string; // short text for tool cards
-  h1: string; // fallback heading (the real SEO copy lives in lib/content.ts)
-  meta: string; // fallback meta description
+  desc: string; 
+  h1: string; 
+  meta: string; 
   category: Category;
   mode: "compress" | "resize" | "convert" | "images-to-pdf";
   from?: string;
   to?: OutType;
-  targetKB?: number; // set for the "compress to X KB" tools
+  targetKB?: number; 
   icon: string;
 }
 
-// PDF is not an image type, but the icon component only needs the MIME string.
 const PDF = "application/pdf" as unknown as OutType;
 
 const conv = (
